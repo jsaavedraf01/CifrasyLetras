@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
 public class CalculadoraHumana {
-	static int marcadorPrueba = 0;		
+    static int marcadorPrueba = 0;
     static int cantidadOperaciones = 5;
 
-	static public int calculadoraHumana() {
-		System.out.println("Calculadora Humana");
+    static public int calculadoraHumana() {
+        System.out.println("Calculadora Humana");
 
-			  Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("CALCULADORA HUMANA");
 
@@ -45,7 +45,7 @@ public class CalculadoraHumana {
 
             int operacion = (int) (Math.random() * 4);
             int valor;
-		    int resultado;
+            int resultado;
 
             if (operacion == 0 || operacion == 1) {
                 valor = (int) (Math.random() * 90) + 10;
