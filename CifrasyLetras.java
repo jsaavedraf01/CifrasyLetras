@@ -10,6 +10,7 @@ public class CifrasyLetras {
 			System.out.println("Escoga su opción:");
 			System.out.println("A. Modo concurso");
 			System.out.println("B. Modo rápido");
+			System.out.println("C. Configuración");
 			System.out.println("C. Salir");
 			String answer = sc.nextLine();
 			answer = answer.toUpperCase();
@@ -18,6 +19,8 @@ public class CifrasyLetras {
 			} else if (answer.equals("B")) {
 				ModoRapido.modoRapido();
 			} else if (answer.equals("C")) {
+				Configuracion.configuracion();
+			} else if (answer.equals("D")) {
 				salir = false;
 			}
 		} while (salir);
