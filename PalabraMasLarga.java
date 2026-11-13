@@ -70,10 +70,10 @@ public class PalabraMasLarga {
 		String consonantes = "bcdfghjklmnpqrstvwxyz";
 		String alfabeto = "abcdefghijklmnopqrstuvwxyz";
 		System.out.println("¡Bienvenidos a Palabra Más Larga!");
-		for (int i = 0; i < 10; i++) {
-			if (i < 4) {
+		for (int i = 0; i < Configuracion.letrasGeneradas; i++) {
+			if (i < Configuracion.vocalesGeneradas) {
 				letrasAleatorias = letrasAleatorias + vocales.charAt(random.nextInt(0, vocales.length()));
-			} else if (i < 8) {
+			} else if (i < (Configuracion.vocalesGeneradas + Configuracion.consonantesGeneradas)) {
 				letrasAleatorias = letrasAleatorias + consonantes.charAt(random.nextInt(0, consonantes.length()));
 			} else {
 				letrasAleatorias = letrasAleatorias + alfabeto.charAt(random.nextInt(0, alfabeto.length()));

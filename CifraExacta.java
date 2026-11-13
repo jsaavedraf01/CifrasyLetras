@@ -17,39 +17,56 @@ public class CifraExacta {
 		return flag;
 	}
 
-	static public int turnoJugador(int turno, int numero, int[] auxiliares) {
+	static public int numeroInicial(int[] auxiliares) {
 		int numeroJugador;
-		if (turno == 1) {
-			System.out.println("Turno del primer jugador");
-		} else if (turno == 2) {
-			System.out.println("Turno del segundo jugador");
-		}do {
+		do {
 			System.out.println("Introduzca el primer número");
 			numeroJugador = sc.nextInt();
 			if (!contieneNumero(auxiliares, numeroJugador)) {
 				System.out.println("Número no válido");
 			}
 		} while (!contieneNumero(auxiliares, numeroJugador));
+		return numeroJugador;
+	}
+
+	static public char siguienteOperacion() {
+		String operacion;
+		do {
+			System.out.println("Introduzca la siguiente operación");
+			operacion = sc.next();
+			if (!operacion.equals("+") && !operacion.equals("-") && !operacion.equals("*")
+					&& !operacion.equals("/")) {
+				System.out.println("Operación no reconocida");
+			}
+		} while (!operacion.equals("+") && !operacion.equals("-") && !operacion.equals("*")
+				&& !operacion.equals("/"));
+		return operacion.charAt(0);
+	}
+
+	static public int siguienteNumero(int[] auxiliares, char operacion) {
+		int siguienteNumero;
+		do {
+			System.out.println("Introduzca el siguiente número");
+			siguienteNumero = sc.nextInt();
+			if (!contieneNumero(auxiliares, siguienteNumero) || (siguienteNumero == 0 && operacion == '/')) {
+				System.out.println("Número no válido");
+			}
+		} while (!contieneNumero(auxiliares, siguienteNumero) || (siguienteNumero == 0 && operacion == '/'));
+		return siguienteNumero;
+	}
+
+	static public int turnoJugador(int turno, int numero, int[] auxiliares) {
+		if (turno == 1) {
+			System.out.println("Turno del primer jugador");
+		} else if (turno == 2) {
+			System.out.println("Turno del segundo jugador");
+		}
+
+		int numeroJugador = numeroInicial(auxiliares);
 		for (int i = 0; i < 5; i++) {
-			int siguienteNumero;
-			String operacion;
-			do {
-				System.out.println("Introduzca la siguiente operación");
-				operacion = sc.next();
-				if (!operacion.equals("+") && !operacion.equals("-") && !operacion.equals("*")
-						&& !operacion.equals("/")) {
-					System.out.println("Operación no reconocida");
-				}
-			} while (!operacion.equals("+") && !operacion.equals("-") && !operacion.equals("*")
-					&& !operacion.equals("/"));
-			do {
-				System.out.println("Introduzca el siguiente número");
-				siguienteNumero = sc.nextInt();
-				if (!contieneNumero(auxiliares, siguienteNumero) || (siguienteNumero == 0 && operacion.equals("/"))) {
-					System.out.println("Número no válido");
-				}
-			} while (!contieneNumero(auxiliares, siguienteNumero) || (siguienteNumero == 0 && operacion.equals("/")));
-			switch (operacion.charAt(0)) {
+			char operacion = siguienteOperacion();
+			int siguienteNumero = siguienteNumero(auxiliares, operacion);
+			switch (operacion) {
 				case '+':
 					numeroJugador += siguienteNumero;
 					break;
