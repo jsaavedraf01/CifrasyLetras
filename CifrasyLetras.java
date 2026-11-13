@@ -28,6 +28,7 @@ public class CifrasyLetras {
 					break;
 				case 'd':
 					salir = true;
+					break;
 			}
 		} while (!salir);
 	}

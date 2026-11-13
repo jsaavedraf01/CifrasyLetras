@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Configuracion {
 	static Scanner sc = new Scanner(System.in);
-	static int numeroPruebas = 4;
+	static int numeroPruebas = 1;
 	static int vocalesGeneradas = 4;
 	static int consonantesGeneradas = 4;
 	static int letrasGeneradas = 10;
@@ -22,9 +22,9 @@ public class Configuracion {
 	static public void opcionPruebas() {
 		int pruebasNuevas = 5;
 		do {
-			System.out.println("¿Cuántas pruebas quieres que se juegen en el modo concurso?");
+			System.out.println("¿Cuántas veces quieres que se juegen las pruebas en el modo concurso?");
 			System.out.println("Actualmente se jugarán " + numeroPruebas + " pruebas");
-			System.out.println("El número de pruebas que se jugarán debe ser 1 o mayor");
+			System.out.println("El número de veces que se jugarán las pruebas debe ser 1 o mayor");
 			pruebasNuevas = sc.nextInt();
 		} while (pruebasNuevas >= 1);
 		numeroPruebas = pruebasNuevas;

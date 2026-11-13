@@ -3,16 +3,21 @@ import java.util.Scanner;
 public class ModoRapido {
 	static Scanner sc = new Scanner(System.in);
 
+	static public void mostrarMenu() {
+		System.out.println("Bienvenido al Modo Rápido");
+		System.out.println("Escoga la prueba que quiera jugar:");
+		System.out.println("A. Cifra Exacta");
+		System.out.println("B. Calculadora Humana");
+		System.out.println("C. Palabra Más Larga");
+		System.out.println("D. Prueba Original");
+
+	}
+
 	static public void modoRapido() {
 		System.out.println("Modo Rápido");
 		boolean flag = true;
 		while (flag) {
-			System.out.println("Bienvenido al Modo Rápido");
-			System.out.println("Escoga la prueba que quiera jugar:");
-			System.out.println("A. Cifra Exacta");
-			System.out.println("B. Calculadora Humana");
-			System.out.println("C. Palabra Más Larga");
-			System.out.println("D. Prueba Original");
+			mostrarMenu();
 			String option = sc.nextLine();
 			option = option.toUpperCase();
 			if (option.length() == 1) {
