@@ -39,7 +39,7 @@ public class ModoRapido {
 						break;
 					case 'D':
 						System.out.println("Prueba Original");
-						PruebaOriginal.puebraOriginal();
+						PruebaOriginal.pruebaOriginal();
 						flag = false;
 						break;
 					default:

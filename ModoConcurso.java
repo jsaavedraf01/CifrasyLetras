@@ -34,7 +34,7 @@ public class ModoConcurso {
 				marcadorJugador2++;
 			}
 
-			ganador = PruebaOriginal.puebraOriginal();
+			ganador = PruebaOriginal.pruebaOriginal();
 
 			if (ganador == 1) {
 				marcadorJugador1++;
